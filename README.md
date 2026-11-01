@@ -2,6 +2,24 @@
 
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rick-lastra/Actividad_6/blob/main/evaluacion.ipynb)
 
+> ## 🧭 Project context · WODPredict-AI Master's Capstone (stage 3 of 4)
+>
+> **Capstone journey:** [Activity 4 · NLP fatigue signal](https://github.com/rick-lastra/WODPredictAI) → [Activity 5 · data & training](https://github.com/rick-lastra/Actividad_5) → [Activity 6 · evaluation & threshold](https://github.com/rick-lastra/Actividad_6) → **[WODPredict-AI Fase II · deployed API](https://github.com/rick-lastra/WODPredict-AI-FaseII)** *(main repository)*
+>
+> | | |
+> |---|---|
+> | **Purpose** | Does the selected model meet the SMART goals (recall ≥ 0.70, precision ≥ 0.35, ROC-AUC ≥ 0.80, CV std < 0.03) on athletes it has never seen, and does it beat simple baselines? Includes threshold tuning, confidence intervals, significance tests and a simulated A/B test. |
+> | **Relationship to WODPredict-AI Fase II** | Source of the **deployed operating point**: threshold **0.17** and the reference metrics stored in Fase II `model/metadata.json` (recall 0.732, precision 0.378, ROC-AUC 0.859). |
+> | **Status** | `archived` · `superseded by WODPredict-AI Fase II`. Kept as the reference evaluation. |
+> | **Main repository** | [rick-lastra/WODPredict-AI-FaseII](https://github.com/rick-lastra/WODPredict-AI-FaseII) |
+>
+> **Please note**
+> - **Synthetic data:** all results come from synthetic athletes (see [Activity 5](https://github.com/rick-lastra/Actividad_5)); the real pilot with Wodify data is planned for November 2026.
+> - **Simulated A/B test:** the A/B comparison splits test athletes at random; it is **not** an experiment with real users.
+> - **Experimental code:** the notebook is evaluation code, not a package; the production artifact and API live in Fase II.
+> - *The rest of this README is in Spanish.*
+
+
 ## Título y Descripción
 **Nombre del proyecto:** WODPredict-AI (Evaluación y Validación del Modelo de Sobrecarga)
 Este repositorio contiene la Actividad 6 del proyecto WODPredict-AI para la red de centros **UnderCover Fitness**. Evaluación y validación de modelos. Se evalúa la regresión logística con matriz de confusión, métricas, ajuste de umbral, curva ROC, validación cruzada, comparación contra baselines con pruebas de significancia y una prueba A/B simulada. Todos los experimentos se registran en **MLflow**.
@@ -93,7 +111,7 @@ Actividad_6/
 *   **Datos:** `sesiones_limpias.csv` de la Actividad 5: 81,901 sesiones de 280 atletas sintéticos (novato, intermedio y élite) entre octubre de 2024 y septiembre de 2026. El 12.5% de las sesiones termina en sobrecarga al día siguiente. Solo se usan 23 variables que se conocen **antes** de entrenar (cargas y frecuencias de los últimos días, ACWR, RPE de la sesión anterior y `prob_fatiga` de los comentarios).
 *   **Generación del dataset sintético** (paquete `wodpredict.synth`, semilla 42):
     1. 280 atletas (94 novato, 93 intermedio y 93 élite) con edad, sexo, idioma, capacidad y frecuencia según su nivel; 25% entra tarde y 20% asiste de forma irregular.
-    2. Un WOD diario común al box; la dificultad se calibró con las marcas reales del atleta de SugarWOD (Actividad 4).
+    2. Un WOD diario común al box; la dificultad se calibró con las marcas reales del registro personal de entrenamiento del autor en SugarWOD (Actividad 4).
     3. Fatiga oculta = carga que decae + estrés y sueño con choques. Nunca se entrega al modelo.
     4. Resultado = dificultad × capacidad × fatiga × ruido; RPE según fatiga y estrés; carga Foster = RPE × minutos.
     5. Etiqueta: la fatiga supera el umbral individual del atleta; prevalencia calibrada al 15% con 5% de ruido de etiqueta.
@@ -143,6 +161,8 @@ Actividad_6/
 *   Repositorio: https://github.com/rick-lastra/Actividad_6
 *   Notebook en Google Colab: https://colab.research.google.com/github/rick-lastra/Actividad_6/blob/main/evaluacion.ipynb
 *   Dataset sintético en Hugging Face (público, versión `v1.0`): https://huggingface.co/datasets/rick-lastra/wodpredict-synth
+*   Actividad 4 (etapa previa, módulo NLP de fatiga): https://github.com/rick-lastra/WODPredictAI
+*   Actividad 5 (etapa previa, datos y entrenamiento con MLflow): https://github.com/rick-lastra/Actividad_5
 
 
 ## 👥 Contacto y Créditos
