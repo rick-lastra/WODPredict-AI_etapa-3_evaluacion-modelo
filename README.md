@@ -2,22 +2,21 @@
 
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rick-lastra/WODPredict-AI_etapa-3_evaluacion-modelo/blob/main/evaluacion.ipynb)
 
-> ## 🧭 Project context · WODPredict-AI Master's Capstone (stage 3 of 4)
+> ## 🧭 Contexto del proyecto · Master's Capstone WODPredict-AI (etapa 3 de 4)
 >
-> **Capstone journey:** [Stage 1 · NLP fatigue signal](https://github.com/rick-lastra/WODPredict-AI_etapa-1_NLP-fatiga) → [Stage 2 · data & training](https://github.com/rick-lastra/WODPredict-AI_etapa-2_preparacion-datos) → [Stage 3 · evaluation & threshold](https://github.com/rick-lastra/WODPredict-AI_etapa-3_evaluacion-modelo) → **[WODPredict-AI Fase II · deployed API](https://github.com/rick-lastra/WODPredict-AI_etapa-4_API-despliegue)** *(main repository)*
+> **Ruta del capstone:** [Etapa 1 · señal NLP de fatiga](https://github.com/rick-lastra/WODPredict-AI_etapa-1_NLP-fatiga) → [Etapa 2 · datos y entrenamiento](https://github.com/rick-lastra/WODPredict-AI_etapa-2_preparacion-datos) → [Etapa 3 · evaluación y umbral](https://github.com/rick-lastra/WODPredict-AI_etapa-3_evaluacion-modelo) → **[Etapa 4 · API desplegada (WODPredict-AI Fase II)](https://github.com/rick-lastra/WODPredict-AI_etapa-4_API-despliegue)** *(repositorio principal)*
 >
 > | | |
 > |---|---|
-> | **Purpose** | Does the selected model meet the SMART goals (recall ≥ 0.70, precision ≥ 0.35, ROC-AUC ≥ 0.80, CV std < 0.03) on athletes it has never seen, and does it beat simple baselines? Includes threshold tuning, confidence intervals, significance tests and a simulated A/B test. |
-> | **Relationship to WODPredict-AI Fase II** | Source of the **deployed operating point**: threshold **0.17** and the reference metrics stored in Fase II `model/metadata.json` (recall 0.732, precision 0.378, ROC-AUC 0.859). |
-> | **Status** | `archived` · `superseded by WODPredict-AI Fase II`. Kept as the reference evaluation. |
-> | **Main repository** | [rick-lastra/WODPredict-AI_etapa-4_API-despliegue](https://github.com/rick-lastra/WODPredict-AI_etapa-4_API-despliegue) |
+> | **Propósito** | ¿El modelo seleccionado cumple las metas SMART (recall ≥ 0.70, precisión ≥ 0.35, ROC-AUC ≥ 0.80, desviación de la validación cruzada < 0.03) con atletas que nunca vio, y supera a líneas base simples? Incluye ajuste del umbral, intervalos de confianza, pruebas de significancia y una prueba A/B simulada. |
+> | **Relación con WODPredict-AI Fase II** | Origen del **punto operativo desplegado**: umbral **0.17** y las métricas de referencia guardadas en `model/metadata.json` de la Fase II (recall 0.732, precisión 0.378, ROC-AUC 0.859). |
+> | **Estado** | `archivado` · `reemplazado por WODPredict-AI Fase II`. Se conserva como la evaluación de referencia. |
+> | **Repositorio principal** | [rick-lastra/WODPredict-AI_etapa-4_API-despliegue](https://github.com/rick-lastra/WODPredict-AI_etapa-4_API-despliegue) |
 >
-> **Please note**
-> - **Synthetic data:** all results come from synthetic athletes (see [Stage 2](https://github.com/rick-lastra/WODPredict-AI_etapa-2_preparacion-datos)); the real pilot with Wodify data is planned for November 2026.
-> - **Simulated A/B test:** the A/B comparison splits test athletes at random; it is **not** an experiment with real users.
-> - **Experimental code:** the notebook is evaluation code, not a package; the production artifact and API live in Fase II.
-> - *The rest of this README is in Spanish.*
+> **Notas importantes**
+> - **Datos sintéticos:** todos los resultados provienen de atletas sintéticos (ver [Etapa 2](https://github.com/rick-lastra/WODPredict-AI_etapa-2_preparacion-datos)); el piloto real con datos de Wodify está planeado para noviembre de 2026.
+> - **Prueba A/B simulada:** la comparación A/B divide al azar a los atletas de prueba; **no** es un experimento con usuarios reales.
+> - **Código experimental:** el notebook es código de evaluación, no un paquete; el artefacto de producción y la API viven en la Fase II.
 
 
 ## Título y Descripción
@@ -164,6 +163,8 @@ WODPredict-AI_etapa-3_evaluacion-modelo/
 *   Etapa 1 (etapa previa, módulo NLP de fatiga): https://github.com/rick-lastra/WODPredict-AI_etapa-1_NLP-fatiga
 *   Etapa 2 (etapa previa, datos y entrenamiento con MLflow): https://github.com/rick-lastra/WODPredict-AI_etapa-2_preparacion-datos
 
+
+*   Etapa 4 (repositorio principal, siguiente etapa: API desplegada · WODPredict-AI Fase II): https://github.com/rick-lastra/WODPredict-AI_etapa-4_API-despliegue
 
 ## 👥 Contacto y Créditos
 *   **Autor:** Ricardo Alejandro Lastra Dueñas
